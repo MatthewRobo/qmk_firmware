@@ -752,14 +752,14 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
 
 void suspend_power_down_kb(void)
 {
-	#ifdef RGB_MATRIX_ENABLE
+    #ifdef RGB_MATRIX_ENABLE
     rgb_matrix_set_suspend_state(true);
     #endif // RGB_MATRIX_ENABLE
 }
 
 void suspend_wakeup_init_kb(void)
 {
-	#ifdef RGB_MATRIX_ENABLE
+    #ifdef RGB_MATRIX_ENABLE
     rgb_matrix_set_suspend_state(false);
     #endif // RGB_MATRIX_ENABLE
 }
