@@ -1,5 +1,8 @@
 #include "dz60rgb.h"
 #include "config.h"
+
+#ifdef RGB_MATRIX_ENABLE
+
 #if defined (dzrgb60_iso)
 
 const is31_led g_is31_leds[DRIVER_LED_TOTAL] = {
@@ -730,6 +733,8 @@ const rgb_led g_rgb_leds[DRIVER_LED_TOTAL] = {
 };
 #endif
 
+#endif // RGB_MATRIX_ENABLE
+
 void matrix_init_kb(void) {
     matrix_init_user();
 }
@@ -747,10 +752,14 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
 
 void suspend_power_down_kb(void)
 {
+	#ifdef RGB_MATRIX_ENABLE
     rgb_matrix_set_suspend_state(true);
+    #endif // RGB_MATRIX_ENABLE
 }
 
 void suspend_wakeup_init_kb(void)
 {
+	#ifdef RGB_MATRIX_ENABLE
     rgb_matrix_set_suspend_state(false);
+    #endif // RGB_MATRIX_ENABLE
 }
