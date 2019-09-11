@@ -213,6 +213,7 @@ void rgb_matrix_indicators_user(void)
 void matrix_init_user(void)
 {
 	//user initialization
+	autoshift_disable();
 }
 
 void matrix_scan_user(void)
