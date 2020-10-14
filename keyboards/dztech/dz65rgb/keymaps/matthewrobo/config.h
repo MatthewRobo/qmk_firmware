@@ -1,5 +1,4 @@
 #pragma once
-
 #define FORCE_NKRO
 
 #define PERMISSIVE_HOLD
@@ -8,6 +7,8 @@
 #define TAP_HOLD_CAPS_DELAY 0
 
 #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
+
+#define USB_POLLING_INTERVAL_MS 1
 
 // #define DISABLE_RGB_MATRIX_SOLID_COLOR
 // #define DISABLE_RGB_MATRIX_ALPHAS_MODS
@@ -53,16 +54,6 @@
 
 // some speed shit
 
-#ifndef NO_DEBUG
-#define NO_DEBUG
-#endif // !NO_DEBUG
-#if !defined(NO_PRINT) && !defined(CONSOLE_ENABLE)
-#define NO_PRINT
-#endif // !NO_PRINT
-
 #define NO_ACTION_ONESHOT
 #define TAPPING_FORCE_HOLD
 #define IGNORE_MOD_TAP_INTERRUPT
-
-// #include "config_led.h"
-// #include "dz60rgb.h"
